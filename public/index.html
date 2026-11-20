@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CA Study Nook</title>
+<meta name="theme-color" content="#ec6a9c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header>
+ <h1>📖 CA Study Nook<small>ICAN ADVISORY LEVEL · AMA &amp; AFR</small></h1>
+ <div class="strk" id="strk"></div>
+ <nav><button class="btn ghost tab" data-t="timer">⏱ Timer</button><button class="btn ghost tab" data-t="syl">🌸 Syllabus</button><button class="btn ghost tab" data-t="rep">📊 Report</button><button class="btn ghost" id="sy" title="Sync with Upstash">☁ Sync</button><button class="btn ghost" id="dk" title="Dark mode">🌙</button></nav>
+</header>
+<main>
+<section id="timer">
+ <div class="card tm">
+  <div>
+   <div class="modes" id="modes"></div>
+   <div class="ringw"><svg width="260" height="260"><circle cx="130" cy="130" r="118" stroke="var(--pk2)"/><circle id="ring" cx="130" cy="130" r="118" stroke-dasharray="741.4" stroke-dashoffset="0"/></svg>
+    <div class="time"><b id="tt">25:00</b><span id="tl">Focus</span></div></div>
+   <div class="ctl"><button class="btn" id="go">▶ Start</button><button class="btn ghost" id="fin">✔ Finish &amp; log</button><button class="btn ghost" id="rst">↺</button></div>
+  </div>
+  <div>
+   <div class="book" id="bk"><div class="cov"></div><div class="lp"></div><div id="pgs"></div></div>
+   <p style="text-align:center" class="m" id="quote">Every page you turn is a mark closer.</p>
+   <label class="m">Studying topic</label><br><select id="tsel" style="width:100%"></select>
+   <p><label class="m">Focus minutes </label><input type="number" id="cm" min="1" max="240" style="width:80px"> &nbsp;<label class="m">Daily goal (min) </label><input type="number" id="gl" min="10" max="900" style="width:80px"></p>
+   <div class="m" id="gtxt"></div><div class="bar" style="margin:6px 0 10px"><i id="gbar"></i></div>
+   <label class="m">Exam date </label><input type="date" id="ex"> <b id="exd"></b>
+  </div>
+ </div>
+</section>
+<section id="syl" class="hid"><div class="tabs2" id="stabs"></div><div id="slist"></div></section>
+<section id="rep" class="hid"></section>
+</main>
+<dialog id="dlg"><h2 style="margin-top:0">Daily report 🌷</h2><p class="m" id="dinfo"></p>
+ <textarea id="dnote" placeholder="What did you study? Key takeaways, questions to revisit..."></textarea>
+ <p>Minutes <input type="number" id="dmin" min="1" style="width:80px"></p>
+ <div class="ctl"><button class="btn" id="dsave">Save session</button><button class="btn ghost" id="dcan">Cancel</button></div></dialog>
+<dialog id="sdlg"><h2 style="margin-top:0">Cloud sync ☁</h2>
+ <p class="m">Enter the PASSCODE you set in Vercel. It is saved on this device only, so enter it once per device.</p>
+ <input type="password" id="spc" placeholder="Passcode" style="width:100%" autocomplete="current-password">
+ <div class="ctl"><button class="btn" id="scon">Connect</button><button class="btn ghost" id="sdis">Disconnect</button><button class="btn ghost" id="scan">Close</button></div></dialog>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
