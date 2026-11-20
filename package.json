@@ -1,0 +1,7 @@
+{
+  "name": "ca-study-nook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pink CA study timer and syllabus tracker (ICAN Advisory Level) with Upstash Redis sync",
+  "engines": { "node": ">=18" }
+}
